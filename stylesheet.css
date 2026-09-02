@@ -39,9 +39,8 @@ nav ul{
     padding: 0;
     font-size: 1rem;
     list-style-type: none;
-    border-bottom: 1px solid black;
 }
-nav #artikelmeny{
+#artikelmeny{
     margin: 0.5rem 0 0 0;
 }
 
@@ -52,13 +51,13 @@ nav li{
 nav li + li{
     border-top: 1px black solid;
 }
-nav a, .artikelmenydata{
+nav a, #artikelmeny > li{
     display: block;
     padding: 0.5rem;
     color: black;
     text-decoration: none;
 }
-.artikelmenydata{
+#artikelmeny > li{
     border-top: 1px solid;
 }
 main{
@@ -107,32 +106,6 @@ footer{
 }
 
 @media (min-width: 768px){
-    #body-index{
-        border: 0px;
-        border-top: 1px solid black;
-    }
-    #body-om-oss{
-        border-top: 1px solid black;
-        border-left: 1px solid black;
-        border-right: 1px solid black;
-        border-bottom: 0;
-    }
-    #main-om-oss{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    #om-oss1{
-        flex: 2;
-        margin: 1rem;
-    }
-    #om-oss2{
-        flex: 1;
-        margin: 1rem;
-    }
-    #main-om-oss article + article{
-        margin-left: 0;
-    }
     nav ul{
     display: flex;
     flex-direction: row;
@@ -163,5 +136,67 @@ footer{
     footer{
         border: 0px;
         border-top: 1px solid black;
+    }
+    #body-index{
+        border: 0px;
+        border-top: 1px solid black;
+    }
+    #body-om-oss{
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        border-bottom: 0;
+    }
+    #main-om-oss{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #om-oss1{
+        flex: 2;
+        margin: 1rem;
+    }
+    #om-oss2{
+        flex: 1;
+        margin: 1rem;
+    }
+    #main-om-oss article + article{
+        margin-left: 0;
+    }
+    #main-artiklar{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "nav article2"
+            ". article3";
+        
+    }
+    #artikelmeny{
+        grid-area: nav;
+        display: flex;
+        flex-direction: column;
+
+        margin: 1rem 1rem 0 0;
+        padding: 0;
+
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+    }
+    #artikelmeny > li{
+        flex: 1;
+        border: 0;
+    }
+    #artikelmeny li + li{
+        border-top: 1px solid black;
+    }
+    #artikel2{
+        grid-area: article2;
+        padding: 1rem;
+    }
+    #artikel3{
+        grid-area: article3;
+        margin: 0;
+        padding: 1rem;
     }
 }
