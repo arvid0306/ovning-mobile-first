@@ -1,0 +1,94 @@
+html{
+    font-size: 16px;
+}
+body{
+    display: grid;                          /*skapar grid*/
+    grid-template-columns: 1fr;             /*skapar en kolumn som är lika stor som webbläsaren*/
+    grid-template-rows: auto auto 1fr auto;      /*skapar 4 rader*/
+    grid-template-areas:                    /*skriver ut hur varje area ska vara inlagd i rader och kolumner*/
+        "header"
+        "nav"
+        "main"
+        "footer";
+
+    gap: 0;
+    margin: 0.5rem;
+    border: 1px solid black;
+}
+header{
+    grid-area: header;                      /*kopplar objektet till rätt grid area*/
+
+    margin: 0;
+    background-color: lightgray;
+}
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+}
+nav{
+    grid-area: nav;                         /*kopplar objektet till rätt grid area*/
+
+    margin: 0;
+    border-top: 1px solid black;
+}
+nav ul{
+    display: flex;
+    flex-direction: column;                          
+    gap: 0rem;
+
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    list-style-type: none;
+}
+
+nav li{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav li + li{
+    border-top: 1px black solid;
+}
+nav a{
+    display: block;
+    padding: 0.5rem;
+}
+main{
+    grid-area: main;                        /*kopplar objektet till rätt grid area*/
+}
+article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 ;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    font-size: 1rem;
+    border-top: 1px solid black;
+}
+.startsida{
+    width: 50%;
+    height: auto;
+    padding-top: 1rem;
+}
+article p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.5rem;
+}
+footer{
+    grid-area:footer;                       /*kopplar objektet till rätt grid area*/
+
+    margin: 0;
+    text-align: center;
+    font-size: 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgray;
+    border-top: 1px solid black;
+}
+
+@media (min-width: 768px){
+    
+}
