@@ -53,6 +53,8 @@ nav li + li{
 nav a{
     display: block;
     padding: 0.5rem;
+    color: inherit;
+    text-decoration: none;
 }
 main{
     grid-area: main;                        /*kopplar objektet till rätt grid area*/
