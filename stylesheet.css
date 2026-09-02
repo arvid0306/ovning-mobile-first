@@ -42,7 +42,7 @@ nav ul{
     border-bottom: 1px solid black;
 }
 nav #artikelmeny{
-    margin: 0.5rem 0;
+    margin: 0.5rem 0 0 0;
 }
 
 nav li{
@@ -73,6 +73,16 @@ article{
     padding: 5%;
 
     font-size: 1rem;
+}
+#artikel2, #artikel3{
+    margin: 1rem 0 1rem 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+#om-oss1, #om-oss2{
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    margin: 1rem 0 1rem 0;
 }
 #artikelbild1, #artikelbild2, #artikelbild3{
     width: 50%;
