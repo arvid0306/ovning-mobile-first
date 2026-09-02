@@ -83,6 +83,7 @@ article{
     border-bottom: 1px solid black;
     border-top: 1px solid black;
     margin: 1rem 0 1rem 0;
+    padding: 1rem;
 }
 #artikelbild1, #artikelbild2, #artikelbild3{
     width: 50%;
@@ -106,9 +107,31 @@ footer{
 }
 
 @media (min-width: 768px){
-    body{
+    #body-index{
         border: 0px;
         border-top: 1px solid black;
+    }
+    #body-om-oss{
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        border-bottom: 0;
+    }
+    #main-om-oss{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #om-oss1{
+        flex: 2;
+        margin: 1rem;
+    }
+    #om-oss2{
+        flex: 1;
+        margin: 1rem;
+    }
+    #main-om-oss article + article{
+        margin-left: 0;
     }
     nav ul{
     display: flex;
