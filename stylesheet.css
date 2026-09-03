@@ -1,0 +1,201 @@
+html{
+    font-size: 16px;
+}
+body{
+    display: grid;                          /*skapar grid*/
+    grid-template-columns: 1fr;             /*skapar en kolumn som täcker sidan inuti body*/
+    grid-template-rows: auto auto 1fr auto;      /*skapar 4 rader*/
+    grid-template-areas:                    /*skriver ut hur varje area ska vara inlagd i rader och kolumner*/
+        "header"
+        "nav"
+        "main"
+        "footer";
+
+    margin: 0.5rem;                         /*sätter en marginal mellan body och webläsarens ytterkanter*/
+    border: 1px solid black;                /*lägger en kant runt hela body*/
+}
+header{
+    grid-area: header;                      /*kopplar objektet till rätt grid area*/
+
+    margin: 0;                              /*sätter 0 i margin mellan header och yttre element*/
+    background-color: lightgray;          /*ändrar bakgrundsfärg till grå*/
+}
+h1{
+    font-family: Arial, Helvetica, sans-serif;      /*ändrar typsnitt för huvudrubriken*/
+    font-size: 1rem;                                /*ändrar storlek på texten*/
+    text-align: center;                             /*centrerar texten*/
+}
+nav{
+    grid-area: nav;                         /*kopplar objektet till rätt grid area*/
+
+    margin: 0;                              /*sätter 0 i margin mellan nav och yttre element*/
+    border-top: 1px solid black;          /*kantlinje på toppen av nav*/
+}
+nav ul{
+    display: flex;                          /*skapar en flexcontainer*/
+    flex-direction: column;                 /*ändrar riktingen för items från horisontelt till vertikalt*/
+
+    margin: 0;                              /*sätter 0 i margin till yttre element*/
+    padding: 0;                             /*tar bort all padding runt om inuti elementet*/
+    font-size: 1rem;                        /*ändrar textstorleken*/
+    list-style-type: none;                  /*tar bort dekorationen på listorna*/
+}
+#artikelmeny{
+    margin: 0.5rem 0 0 0;                   /*lägger till margin på höjden och tar bort övrig margin*/
+}
+
+nav li{
+    text-align: center;                     /*centrerar texten*/
+    font-family: Arial, Helvetica, sans-serif;  /*ändrar typsnittet*/
+}
+nav li + li{
+    border-top: 1px black solid;            /*lägger till en border på toppen varje gång en li får en ny li under sig.*/
+}
+nav a, #artikelmeny > li{
+    display: flex;                           /*skapar en flexcontainer*/
+    justify-content: center;                /*centrerar innehållet horisontalt*/
+    align-items: center;                    /*centrerar innehållet vertikalt*/
+    padding: 0.5rem;                        /*lägger padding på alla kanter*/
+    color: black;                         /*ändrar färg på texten/länkarna till svart*/
+    text-decoration: none;                  /*tar bort underlinjen på länkarna*/
+}
+#artikelmeny > li{
+    border-top: 1px solid;                  /*lägger till en border på toppen*/
+}
+main{
+    grid-area: main;                        /*kopplar objektet till rätt grid area*/
+}
+article{
+    display: flex;                          /*skapar flexcontainer*/
+    flex-direction: column;                 /*placerar items på en vertikal linje istället för standard horisontal*/
+    align-items: center;                    /*centrerar innehåller vertikalt*/
+    gap: 1rem;                              /*skapar mellanrum mellan artiklarna inuti article (barnen)*/                         
+    margin: 0 ;                             /*tar bort all margin*/
+    padding: 5%;                            /*lägger till 5% padding på alla kanter*/
+
+    font-size: 1rem;                        /*ändrar textstorlek*/
+}
+#artikel2, #artikel3{
+    margin: 1rem 0 1rem 0;                  /*lägger till margin på toppen och botten*/
+    border-top: 1px solid black;            /*kantlinje på toppen*/
+    border-bottom: 1px solid black;         /*kantlinje på botten*/
+}
+#om-oss1, #om-oss2{
+    border-bottom: 1px solid black;         /*kantlinje på botten*/
+    border-top: 1px solid black;            /*kantlinje på toppen*/
+    margin: 1rem 0 1rem 0;                    /*lägger till margin på toppen och botten*/
+    padding: 1rem;                            /*lägger till padding på alla kanter*/
+}
+#artikelbild1, #artikelbild2, #artikelbild3{
+    width: 50%;                               /*ändrar bredden till 50% av storleken på föräldren*/
+    height: auto;                             /*sätter höjden till auto så att den blir proportionelig*/
+}
+article p{
+    font-family: Arial, Helvetica, sans-serif;          /*ändrar fonten*/
+    font-size: 0.5rem;                                  /*ändrar textstorlek*/
+    margin: 0;                                          /*tar bort all margin*/
+}
+footer{
+    grid-area:footer;                       /*kopplar objektet till rätt grid area*/
+
+    margin: 0;                              /*tar bort all margin*/
+    padding: 0.5rem 0 0.5rem 0;             /*lägger till padding på toppen och botten*/
+    text-align: center;                     /*ändrar fonten*/
+    font-size: 0.5rem;                      /*ändrar textstorlek*/
+    font-family: Arial, Helvetica, sans-serif;          /*ändrar typsnitt*/
+    background-color: lightgray;          /*ändrar bakgrundsfärg*/
+    border-top: 1px solid black;          /*lägger till en kantlinje på toppen*/
+}
+
+@media (min-width: 768px){                  /*all css inuti denna tagg aktiveras enbart och användarens skärm är större än 768px bred*/
+    nav ul{
+    flex-direction: row;                    /*ändrar menyn från fallande vertikalt till en rad horisontalt*/
+    justify-content: space-around;          /*skapar luft mellan items*/
+    border-bottom: 1px solid black;       /*lägger till en kantlinje i botten*/
+    }
+    nav li{
+        flex: 1;                            /*gör så att varje item tar upp lika mycket plats*/
+        border: 0px;                        /*tar bort alla kantlinjer*/
+    }
+    nav li + li{
+        border: 0;                          /*tar bort alla kantlinjer*/
+        border-left: 1px solid black;     /*lägger till en kantlinje till vänster på varle li item varje gång det kommer en li efter*/
+    }
+    article{
+        flex-direction: row;                /*ändrar rikting till en horisontell rad*/
+        align-items: flex-start;            /*gör att items placeras högst upp i containern*/
+
+        margin: 5%;                         /*lägger till margin*/
+        border: 1px solid black;          /*lägger till kantlinje*/
+    }
+    footer{
+        border: 0px;                        /*tar bort all kantlinje*/
+        border-top: 1px solid black;      /*lägger till kantlinje på toppen*/
+    }
+    #body-index{
+        border: 0px;                        /*tar bort all kantlinje*/
+        border-top: 1px solid black;        /*lägger till kantlinje på toppen*/
+    }
+    #body-om-oss{
+        border-bottom: 0;                   /*tar bort kantlinjen i botten*/                  
+    }
+    #main-om-oss{
+        display: flex;                      /*skapar flexcontainer i main*/
+        justify-content: space-between;     /*lägger till mellanrum mellan items*/
+    }
+    #om-oss1{
+        flex: 2;                            /*gör så att denna item tar upp 2 platser i storlek*/
+        margin: 1rem;                       /*lägger till margin på alla kanter*/
+    }
+    #om-oss2{
+        flex: 1;                            /*gör så att denna item tar upp 1 plats i storlek*/
+        margin: 1rem;                       /*lägger till margin på alla kanter*/
+    }
+    #main-om-oss article + article{
+        margin-left: 0;                     /*tar bort margin till vänster på varje article som har en article framför sig inuti main inuti sidan om oss*/
+    }
+    #main-artiklar{
+        display: grid;                      /*skapar grid*/
+        grid-template-columns: 1fr 3fr;     /*skapar 2 kolumner varav första är 1 bred och den andra är 3 bred*/
+        grid-template-rows: auto auto;      /*skapar två rader som anpassar höjden efter innehållet*/
+        grid-template-areas:                /*skapar en beskrivning av hur innehållet ska placeras inuti griden*/
+            "nav article2"
+            ". article3";
+        
+    }
+    #main-artiklar > nav{
+        border-top: 0;                      /*tar bort kantlinjen i toppen*/
+    }
+    #nav-artiklar-undermeny{
+        grid-area: nav;                     /*kopplar id till nav i grid area*/
+        display: flex;                      /*skapar en flexcontainer*/
+    }
+    #nav-artiklar-undermeny ul{
+        display: flex;                      /*skapar flexcontainer*/
+        flex: 1;                            /*storlek på item till en storlek, alltså att den delan hela ytan med övriga item, i detta fall är den ensam så den tar upp hela ytan*/
+        flex-direction: column;             /*placerar items på en vertikal rad*/
+
+        margin: 1rem 1rem 0 0;              /*lägger till margin på toppen och till höger*/
+        padding: 0;                         /*tar bort all padding*/
+
+        border-right: 1px solid black;    /*lägger till kantlinje på höger sida*/
+    }
+    #nav-artiklar-undermeny li{
+        flex: 1;                            /*delar storleken på ytan lika mellan de olika li*/
+    }
+    #nav-artiklar-undermeny li + li{
+        border-top: 1px solid black;      /*lägger till kantlinje på toppen varje gång en li har en li ovanför sig*/       
+        border-left: 0;                     /*tar bort kantlinje till höger varje gång en li kommer efter en li*/
+    }
+    #artikel2{
+        grid-area: article2;                /*kopplar id till article2 i grid area*/
+        padding: 1rem;                      /*lägger till padding på alla kanter*/
+        margin-right: 1rem;                 /*lägger till margin till höger om artikeln*/
+    }
+    #artikel3{
+        grid-area: article3;                /*kopplar id till article3 i grid area*/
+        margin: 0;                          /*tar bort all margin*/
+        padding: 1rem;                      /*lägger till padding på alla kanter*/
+        margin-right: 1rem;                 /*lägger till margin till höger om artikeln*/
+    }
+}
