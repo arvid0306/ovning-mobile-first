@@ -22,7 +22,7 @@ header{
 }
 h1{
     font-family: Arial, Helvetica, sans-serif;      /*ändrar typsnitt för huvudrubriken*/
-    font-size: 1rem;                                /*ändrar storlek på texten*/
+    font-size: 2rem;                                /*ändrar storlek på texten*/
     text-align: center;                             /*centrerar texten*/
 }
 nav{
@@ -37,7 +37,7 @@ nav ul{
 
     margin: 0;                              /*sätter 0 i margin till yttre element*/
     padding: 0;                             /*tar bort all padding runt om inuti elementet*/
-    font-size: 1rem;                        /*ändrar textstorleken*/
+    font-size: 2rem;                        /*ändrar textstorleken*/
     list-style-type: none;                  /*tar bort dekorationen på listorna*/
 }
 #artikelmeny{
@@ -92,7 +92,7 @@ article{
 }
 article p{
     font-family: Arial, Helvetica, sans-serif;          /*ändrar fonten*/
-    font-size: 0.5rem;                                  /*ändrar textstorlek*/
+    font-size: 1rem;                                  /*ändrar textstorlek*/
     margin: 0;                                          /*tar bort all margin*/
 }
 footer{
@@ -101,7 +101,7 @@ footer{
     margin: 0;                              /*tar bort all margin*/
     padding: 0.5rem 0 0.5rem 0;             /*lägger till padding på toppen och botten*/
     text-align: center;                     /*ändrar fonten*/
-    font-size: 0.5rem;                      /*ändrar textstorlek*/
+    font-size: 1rem;                      /*ändrar textstorlek*/
     font-family: Arial, Helvetica, sans-serif;          /*ändrar typsnitt*/
     background-color: lightgray;          /*ändrar bakgrundsfärg*/
     border-top: 1px solid black;          /*lägger till en kantlinje på toppen*/
@@ -189,13 +189,13 @@ footer{
     }
     #artikel2{
         grid-area: article2;                /*kopplar id till article2 i grid area*/
-        padding: 1rem;                      /*lägger till padding på alla kanter*/
+        padding: 2rem;                      /*lägger till padding på alla kanter*/
         margin-right: 1rem;                 /*lägger till margin till höger om artikeln*/
     }
     #artikel3{
         grid-area: article3;                /*kopplar id till article3 i grid area*/
         margin: 0;                          /*tar bort all margin*/
-        padding: 1rem;                      /*lägger till padding på alla kanter*/
+        padding: 2rem;                      /*lägger till padding på alla kanter*/
         margin-right: 1rem;                 /*lägger till margin till höger om artikeln*/
     }
 }
