@@ -197,5 +197,6 @@ footer{
         margin: 0;                          /*tar bort all margin*/
         padding: 2rem;                      /*lägger till padding på alla kanter*/
         margin-right: 1rem;                 /*lägger till margin till höger om artikeln*/
+        margin-bottom: 1rem;                /*lägger till margin på botten*/
     }
 }
